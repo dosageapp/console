@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horse Racing Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Login -->
+<div class="login-container" id="loginContainer">
+  <h2>Admin Login</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p id="error" class="error"></p>
+</div>
+
+<!-- Admin Panel -->
+<div class="admin-container" id="adminContainer" style="display:none;">
+  <div class="sidebar">
+    <h2>Horse Racing Panel</h2>
+    <ul>
+      <li class="active" onclick="showSection('dashboard')">Dashboard</li>
+      <li onclick="showSection('horses')">Horses / Pedigree</li>
+      <li onclick="showSection('races')">Races</li>
+      <li onclick="showSection('settings')">Settings</li>
+      <li onclick="logout()">Logout</li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <!-- Dashboard -->
+    <div id="dashboard" class="section">
+      <h1>Dashboard</h1>
+      <p>Overview and recent race results will appear here.</p>
+    </div>
+
+    <!-- Horses / Pedigree -->
+    <div id="horses" class="section" style="display:none;">
+      <h1>Horses / Pedigree</h1>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Horse Name</th>
+          <th>Pedigree</th>
+          <th>Age</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Lightning</td>
+          <td>Sire: Thunder, Dam: Storm</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Wind</td>
+          <td>Sire: Hurricane, Dam: Breeze</td>
+          <td>4</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Races -->
+    <div id="races" class="section" style="display:none;">
+      <h1>Races</h1>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Race Name</th>
+          <th>Date</th>
+          <th>Winner</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Grand Derby</td>
+          <td>12.11.2025</td>
+          <td>Lightning</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Golden Run</td>
+          <td>15.11.2025</td>
+          <td>Wind</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Settings -->
+    <div id="settings" class="section" style="display:none;">
+      <h1>Settings</h1>
+      <p>You can change panel settings here.</p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
